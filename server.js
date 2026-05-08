@@ -11,7 +11,8 @@ app.use(express.json());
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: process.env.SMTP_PORT,
-  secure: true, // MUST be true for port 465
+  secure: true, 
+  family: 4,
   auth: {
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
